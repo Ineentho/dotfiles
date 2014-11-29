@@ -12,7 +12,7 @@ bindkey -v
 
 # oh-my-zsh
 export ZSH=$HOME/dotfiles/oh-my-zsh
-ZSH_THEME='af-magic'
+ZSH_THEME='clean'
 plugins=(git)
 . $ZSH/oh-my-zsh.sh
 
@@ -32,11 +32,6 @@ function _update_ps1() {
 	export PS1="$(python2 ~/powerline-shell.py $? 2> /dev/null)"
 }
 
-#export PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-
-if [ -f /etc/bash_completion ]; then
-	    . /etc/bash_completion
-fi
 
 xhost +local:root > /dev/null 2>&1
 
@@ -79,10 +74,4 @@ ex ()
   fi
 }
 
-# prompt
-#PS1='[\u@\h \W]\$ '
-#BROWSER=/usr/bin/xdg-open
 alias cb='xclip -selection c'
-
-
-. ~/dotfiles/prompt.zsh
