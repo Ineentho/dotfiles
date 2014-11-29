@@ -1,4 +1,11 @@
-. git-completions.sh
+# zsh
+zstyle :compinstall filename '/home/ineentho/.zshrc'
+autoload -Uz compinit
+compinit
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+bindkey -v
 
 function tddd63 {
 	. ~/py/env/bin/activate
@@ -15,29 +22,13 @@ function _update_ps1() {
 	export PS1="$(python2 ~/powerline-shell.py $? 2> /dev/null)"
 }
 
-export PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+#export PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 
 if [ -f /etc/bash_completion ]; then
 	    . /etc/bash_completion
 fi
 
 xhost +local:root > /dev/null 2>&1
-
-complete -cf sudo
-
-shopt -s cdspell
-shopt -s checkwinsize
-shopt -s cmdhist
-shopt -s dotglob
-shopt -s expand_aliases
-shopt -s extglob
-shopt -s histappend
-shopt -s hostcomplete
-shopt -s nocaseglob
-
-export HISTSIZE=10000
-export HISTFILESIZE=${HISTSIZE}
-export HISTCONTROL=ignoreboth
 
 alias bcorona=". ~/py/auto/bin/activate; python ~/lif-quiz/bin/build.py"
 alias clip='xclip -selection clipboard'
@@ -79,6 +70,6 @@ ex ()
 }
 
 # prompt
-PS1='[\u@\h \W]\$ '
-BROWSER=/usr/bin/xdg-open
+#PS1='[\u@\h \W]\$ '
+#BROWSER=/usr/bin/xdg-open
 alias cb='xclip -selection c'

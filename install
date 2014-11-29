@@ -1,3 +1,13 @@
 #!/bin/sh
-ln -s $(pwd)/.bashrc ~/.bashrc
+
+# Change default shell to zsh
+chsh -s $(which zsh)
+
+
+# Add aliases to some dotfiles
+
+rm -r ~/.zshrc
+ln -s $(pwd)/.zshrc ~/.zshrc
+
+rm -r ~/.config/awesome
 ln -s $(pwd)/awesome ~/.config

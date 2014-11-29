@@ -243,7 +243,7 @@ globalkeys = awful.util.table.join(
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey,           }, "v", function () awful.util.spawn('intellij-idea-ultimate-edition') end),
-    awful.key({ modkey,           }, "c", function () awful.util.spawn('google-chrome-stable') end),
+    awful.key({ modkey,           }, "c", function () awful.util.spawn('chromium') end),
     awful.key({ modkey,           }, "s", function () awful.util.spawn_with_shell('vboxmanage snapshot Mac restore Clean;vboxmanage startvm Mac') end),
     awful.key({ modkey,           }, "a", function () awful.util.spawn('urxvt -e vim') end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
