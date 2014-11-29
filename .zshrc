@@ -1,4 +1,5 @@
 #!/bin/zsh
+
 # zsh
 zstyle :compinstall filename '/home/ineentho/.zshrc'
 autoload -Uz compinit
@@ -7,6 +8,14 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 bindkey -v
+
+
+# oh-my-zsh
+export ZSH=$HOME/dotfiles/oh-my-zsh
+ZSH_THEME='af-magic'
+plugins=(git)
+. $ZSH/oh-my-zsh.sh
+
 
 function tddd63 {
 	. ~/py/env/bin/activate
