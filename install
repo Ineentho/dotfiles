@@ -1,8 +1,10 @@
-#!/bin/sh
+#!/bin/zsh
 
 # Change default shell to zsh
-chsh -s $(which zsh)
-
+if [[ ! $SHELL =~ zsh ]]
+then
+	chsh -s $(which zsh)
+fi
 
 # Add aliases to some dotfiles
 
@@ -11,3 +13,8 @@ ln -s $(pwd)/.zshrc ~/.zshrc
 
 rm -r ~/.config/awesome
 ln -s $(pwd)/awesome ~/.config
+
+rm -r ~/.Xresources
+ln -s $(pwd)/.Xresources ~/.Xresources
+
+xrdb ~/.Xresources
