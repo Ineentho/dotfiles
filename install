@@ -1,0 +1,3 @@
+#!/bin/sh
+ln -s $(pwd)/.bashrc ~/.bashrc
+ln -s $(pwd)/awesome ~/.config
