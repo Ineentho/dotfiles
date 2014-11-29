@@ -1,3 +1,4 @@
+#!/bin/zsh
 # zsh
 zstyle :compinstall filename '/home/ineentho/.zshrc'
 autoload -Uz compinit
@@ -73,3 +74,6 @@ ex ()
 #PS1='[\u@\h \W]\$ '
 #BROWSER=/usr/bin/xdg-open
 alias cb='xclip -selection c'
+
+
+. ~/dotfiles/prompt.zsh
