@@ -17,4 +17,7 @@ ln -s $(pwd)/awesome ~/.config
 rm -r ~/.Xresources
 ln -s $(pwd)/.Xresources ~/.Xresources
 
+rm -r ~/.vimrc
+ln -s $(pwd)/.vimrc ~/.vimrc
+
 xrdb ~/.Xresources
