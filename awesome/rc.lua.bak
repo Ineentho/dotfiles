@@ -3,21 +3,55 @@ local gears = require("gears")
 local awful = require("awful")
 awful.rules = require("awful.rules")
 require("awful.autofocus")
-local wibox = require("wibox") -- Widget and layout library
-local beautiful = require("beautiful") -- Theme handling library
-local naughty = require("naughty") -- Notification library
+-- Widget and layout library
+local wibox = require("wibox")
+-- Theme handling library
+local beautiful = require("beautiful")
+-- Notification library
+local naughty = require("naughty")
 local menubar = require("menubar")
 
-beautiful.init("~/.config/awesome/theme.lua")
+-- {{{ Error handling
+-- Check if awesome encountered an error during startup and fell back to
+-- another config (This code will only ever execute for the fallback config)
+if awesome.startup_errors then
+    naughty.notify({ preset = naughty.config.presets.critical,
+                     title = "Oops, there were errors during startup!",
+                     text = awesome.startup_errors })
+end
 
-terminal = "urxvtc"
-editor = "vim"
+-- Handle runtime errors after startup
+do
+    local in_error = false
+    awesome.connect_signal("debug::error", function (err)
+        -- Make sure we don't go into an endless error loop
+        if in_error then return end
+        in_error = true
+
+        naughty.notify({ preset = naughty.config.presets.critical,
+                         title = "Oops, an error happened!",
+                         text = err })
+        in_error = false
+    end)
+end
+-- }}}
+
+-- {{{ Variable definitions
+-- Themes define colours, icons, font and wallpapers.
+beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+
+-- This is used later as the default terminal and editor to run.
+terminal = "urxvt" editor = "vim"
 editor_cmd = terminal .. " -e " .. editor
+
+-- Default modkey.
+-- Usually, Mod4 is the key with a logo between Control and Alt.
+-- If you do not like this or do not have such a key,
+-- I suggest you to remap Mod4 to another key using xmodmap or other tools.
+-- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
 
--- For transparency
-awful.util.spawn_with_shell("xcompmgr&")
-
+-- Table of layouts to cover with awful.layout.inc, order matters.
 local layouts =
 {
     --awful.layout.suit.floating,
@@ -33,14 +67,15 @@ local layouts =
     --awful.layout.suit.max.fullscreen,
     --awful.layout.suit.magnifier
 }
+-- }}}
 
-
+-- {{{ Wallpaper
 if beautiful.wallpaper then
     for s = 1, screen.count() do
         gears.wallpaper.maximized(beautiful.wallpaper, s, true)
     end
 end
-
+-- }}}
 
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
@@ -426,8 +461,6 @@ run_once('nm-applet')
 run_once('xrdb -merge ~/.Xresources')
 run_once('chromium --no-startup-window', 'chromium')
 run_once('copy')
-run_once('urxvtd -q -f -o')
-run_once('pulseaudio --start')
 --run_once('skype')
 
 -- all minimized clients are restored 
