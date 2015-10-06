@@ -1,0 +1,68 @@
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-sensible'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'wincent/Command-T'
+Plug 'tpope/vim-fugitive'
+"Plug 'Valloric/YouCompleteMe'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-lua-ftplugin'
+Plug 'nerdtree-execute'
+Plug 'fatih/vim-go'
+Plug 'digitaltoad/vim-jade'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'leafo/moonscript-vim' 
+Plug 'wavded/vim-stylus'
+Plug 'flazz/vim-colorschemes'
+call plug#end()
+
+"execute pathogen#infect()
+"syntax on
+"filetype indent plugin on
+" set omnifunc=syntaxcomplete#Complete
+set encoding=utf-8
+
+let g:lua_complete_omni = 0
+let g:lua_internal = 0
+
+set wildignore+=node_modules
+let g:CommandTFileScanner = 'ruby'
+
+
+autocmd QuickFixCmdPost *grep* cwindow
+
+
+
+" Map ctrl-movement keys to window switching
+map <C-k> <C-w><Up>
+map <C-j> <C-w><Down>
+map <C-l> <C-w><Right>
+map <C-h> <C-w><Left>
+
+map <C-a> <Leader>t
+
+set relativenumber
+set number
+
+
+map <C-x>j :cnext<enter>
+map <C-x>k :cprev<enter>
+map <C-x>q :cclose<enter>
+
+set scrolloff=5
+nmap <space> zz
+
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+
+autocmd Filetype go setlocal noexpandtab tabstop=4
+
+:command -nargs=+ Ggr execute 'silent Ggrep' <q-args> | cw | redraw!
+
+func GitGrepWord()
+  normal! "zyiw
+  execute 'Ggr -w -e' . getreg('z')
+endf
+nmap <C-x>x :call GitGrepWord()<CR>
+
+cnoremap w!! w !sudo tee > /dev/null %
+
+colorscheme Monokai

@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+DOTFILES_ROOT=$(pwd)
+DOTFILES_OLD=~/dotfiles-old-$(date +%Y-%m-%d.%H:%M:%S)
+
+function dot() {
+    local src=$1 # the file inside the dotfiles repo
+    local target=$2 # the file usually located in the home directory
+
+    mkdir -p $(dirname "$DOTFILES_OLD/$src")
+    mv "$target" "$DOTFILES_OLD/$src"
+    ln -s "$DOTFILES_ROOT/$src" "$target"
+}
+
+
+function main() {
+    mkdir "$DOTFILES_OLD"
+
+    dot zsh/zshrc ~/.zshrc
+    dot xresources/Xresources ~/.Xresources
+    dot vim/vimrc ~/.vimrc
+
+    dot git/gitignore_global ~/.gitignore_global
+    git config --global core.excludesfile ~/.gitignore_global
+}
+
+main
