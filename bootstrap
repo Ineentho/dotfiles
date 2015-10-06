@@ -20,6 +20,7 @@ function main() {
 
     dot zsh/zshrc ~/.zshrc
     dot xresources/Xresources ~/.Xresources
+    dot xresources/xinitrc ~/.xinitrc
     dot vim/vimrc ~/.vimrc
     dot git/gitignore_global ~/.gitignore_global
     dot git/gitconfig ~/.gitconfig
