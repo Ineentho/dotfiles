@@ -24,6 +24,7 @@ function main() {
     dot git/gitignore_global ~/.gitignore_global
     dot git/gitconfig ~/.gitconfig
     dot i3 ~/.i3
+    dot awesome ~/.config/awesome
 }
 
 main
