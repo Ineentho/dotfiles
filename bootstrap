@@ -19,9 +19,8 @@ function main() {
     dot zsh/zshrc ~/.zshrc
     dot xresources/Xresources ~/.Xresources
     dot vim/vimrc ~/.vimrc
-
     dot git/gitignore_global ~/.gitignore_global
-    git config --global core.excludesfile ~/.gitignore_global
+    dot git/gitconfig ~/.gitconfig
 }
 
 main

@@ -1,0 +1,10 @@
+[user]
+	email = hk.henrik@gmail.com
+	name = Ineentho
+[default]
+	push = simple
+[push]
+	default = simple
+[core]
+	excludesfile = /home/ineentho/.gitignore_global
+	editor = vim
