@@ -9,6 +9,8 @@ function dot() {
 
     mkdir -p $(dirname "$DOTFILES_OLD/$src")
     mv "$target" "$DOTFILES_OLD/$src"
+
+    mkdir -p $(dirname "$target")
     ln -s "$DOTFILES_ROOT/$src" "$target"
 }
 
@@ -21,6 +23,7 @@ function main() {
     dot vim/vimrc ~/.vimrc
     dot git/gitignore_global ~/.gitignore_global
     dot git/gitconfig ~/.gitconfig
+    dot i3 ~/.i3
 }
 
 main
