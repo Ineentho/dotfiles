@@ -19,6 +19,7 @@ function main() {
     mkdir "$DOTFILES_OLD"
 
     dot zsh/zshrc ~/.zshrc
+    dot zsh/MyAntigen.hs ~/.zsh/MyAntigen.hs
     dot xresources/Xresources ~/.Xresources
     dot xresources/xinitrc ~/.xinitrc
     dot vim/vimrc ~/.vimrc
