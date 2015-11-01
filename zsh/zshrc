@@ -47,10 +47,15 @@ ex ()
   fi
 }
 
+alias update-lif='ssh ineentho@quiz.happybearstudios.com ./update'
+
 
 
 alias cb='xclip -selection c'
 
+export GOPATH=~/go
+export PATH=$PATH:~/go/bin
+export VISUAL=vim
 
 NPM_PACKAGES="${HOME}/.npm-packages"
 NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
