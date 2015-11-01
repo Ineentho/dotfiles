@@ -24,6 +24,11 @@ alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano PKGBUILD'
 alias idea='intellij-idea-ultimate-edition'
+
+sd () {
+    shutdown now $@
+}
+
 # ex - archive extractor
 # usage: ex <file>
 ex ()
@@ -47,6 +52,10 @@ ex ()
   fi
 }
 
+mkcd () {
+    mkdir -p $1 && cd $1
+}
+
 
 
 alias cb='xclip -selection c'
@@ -58,7 +67,16 @@ PATH="${HOME}/bin:$NPM_PACKAGES/bin:$PATH"
 unset MANPATH
 MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
+export GOPATH=~/go
+export PATH="$PATH:$GOPATH/bin"
 
 # Antigen-hs
 source ~/.zsh/antigen-hs/init.zsh
 setopt prompt_subst
+setopt AUTO_PUSHD
+setopt PUSHD_MINUS
+setopt CDABLE_VARS
+stty stop undef
+stty start undef
+export NVM_DIR="/home/ineentho/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

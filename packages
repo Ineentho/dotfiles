@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+sudo true
+
+sudo pacman -Syu \
+    nodejs \
+

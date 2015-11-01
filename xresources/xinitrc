@@ -8,15 +8,7 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 # merge in defaults and keymaps
 
 if [ -f $sysresources ]; then
-
-
-
-
-
-
-
     xrdb -merge $sysresources
-
 fi
 
 if [ -f $sysmodmap ]; then
@@ -24,15 +16,7 @@ if [ -f $sysmodmap ]; then
 fi
 
 if [ -f "$userresources" ]; then
-
-
-
-
-
-
-
     xrdb -merge "$userresources"
-
 fi
 
 if [ -f "$usermodmap" ]; then
@@ -51,5 +35,6 @@ fi
 setxkbmap se
 #xrandr --output DisplayPort-0 --off --output DVI-1 --mode 2560x1440 --pos 1920x0 --rotate normal --output DVI-0 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-0 --mode 1920x1080 --pos 4480x0 --rotate normal
 parcellite&
+nm-applet&
 exec i3 --force-xinerama
 #exec openbox
