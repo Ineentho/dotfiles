@@ -26,7 +26,7 @@ URxvt.background: #111
 
 URxvt*scrollBar: false
 URxvt*foreground: #bbb
-URxvt*font: xft:Source Code Pro:size=10,xft
+URxvt*font: xft:Source Code Pro:size=10
 
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0

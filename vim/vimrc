@@ -15,6 +15,7 @@ Plug 'leafo/moonscript-vim'
 Plug 'wavded/vim-stylus'
 Plug 'flazz/vim-colorschemes'
 Plug 'Valloric/YouCompleteMe'
+Plug 'yosssi/vim-ace'
 call plug#end()
 
 "execute pathogen#infect()
@@ -68,5 +69,7 @@ endf
 nmap <C-x>x :call GitGrepWord()<CR>
 
 cnoremap w!! w !sudo tee > /dev/null %
+
+let &colorcolumn=join(range(81,999),",")
 
 colorscheme Monokai
