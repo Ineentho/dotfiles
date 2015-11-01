@@ -25,6 +25,13 @@ alias free='free -m'                      # show sizes in MB
 alias np='nano PKGBUILD'
 alias idea='intellij-idea-ultimate-edition'
 
+
+bindkey -v
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^r' history-incremental-search-backward
+
+
 sd () {
     shutdown now $@
 }
