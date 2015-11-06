@@ -3,7 +3,6 @@ Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'wincent/Command-T'
 Plug 'tpope/vim-fugitive'
-"Plug 'Valloric/YouCompleteMe'
 Plug 'xolox/vim-misc'
 Plug 'marijnh/tern_for_vim'
 Plug 'xolox/vim-lua-ftplugin'
@@ -14,7 +13,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'leafo/moonscript-vim' 
 Plug 'wavded/vim-stylus'
 Plug 'flazz/vim-colorschemes'
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py'}
 Plug 'yosssi/vim-ace'
 call plug#end()
 
