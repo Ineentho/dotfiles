@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'wincent/Command-T'
+Plug 'wincent/Command-T', { 'do': 'cd ruby/command-t && ruby extconf.rb && make' }
 Plug 'tpope/vim-fugitive'
 Plug 'xolox/vim-misc'
 Plug 'marijnh/tern_for_vim'
@@ -13,7 +13,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'leafo/moonscript-vim' 
 Plug 'wavded/vim-stylus'
 Plug 'flazz/vim-colorschemes'
-Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py'}
+Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py' }
 Plug 'yosssi/vim-ace'
 call plug#end()
 

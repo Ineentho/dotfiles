@@ -25,6 +25,7 @@ function main() {
     dot vim/vimrc ~/.vimrc
     dot git/gitignore_global ~/.gitignore_global
     dot git/gitconfig ~/.gitconfig
+    dot npm/npmrc ~/.npmrc
     dot i3/config ~/.i3/config
     dot i3/i3status.conf ~/.i3status.conf
     dot awesome ~/.config/awesome
