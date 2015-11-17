@@ -1,7 +1,22 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 sudo true
 
-sudo pacman -Syu \
+sudo pacman --noconfirm -Syu \
     nodejs \
+    ghc \
+    cabal-install \
+    rxvt-unicode \
+    tmux \
+    cmake
 
+# install antigen for zsh
+git clone https://github.com/Tarrasch/antigen-hs.git ~/.zsh/antigen-hs/
+
+# install vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+vim -c "PlugInstall"
+
+yes | source ~/.zsh/antigen-hs/init.zsh
