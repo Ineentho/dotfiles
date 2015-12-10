@@ -12,10 +12,13 @@ Plug 'digitaltoad/vim-jade'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'leafo/moonscript-vim' 
 Plug 'wavded/vim-stylus'
+Plug 'isRuslan/vim-es6'
 Plug 'flazz/vim-colorschemes'
 Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py' }
 Plug 'yosssi/vim-ace'
 call plug#end()
+
+:let mapleader = ","
 
 "execute pathogen#infect()
 "syntax on

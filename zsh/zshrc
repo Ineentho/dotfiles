@@ -24,6 +24,8 @@ alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano PKGBUILD'
 alias idea='intellij-idea-ultimate-edition'
+alias tmux='TERM=screen-256color tmux'
+alias ara='android-run-all LIFQuiz.apk com.happybearstudios.lifquiz/com.ansca.corona.CoronaActivity'
 
 
 bindkey -v
@@ -93,3 +95,4 @@ stty stop undef
 stty start undef
 export NVM_DIR="/home/ineentho/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+

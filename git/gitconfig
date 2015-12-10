@@ -8,3 +8,5 @@
 [core]
 	excludesfile = /home/ineentho/.gitignore_global
 	editor = vim
+[alias]
+	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
