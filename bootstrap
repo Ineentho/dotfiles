@@ -23,6 +23,7 @@ function main() {
     dot xresources/Xresources ~/.Xresources
     dot xresources/xinitrc ~/.xinitrc
     dot vim/vimrc ~/.vimrc
+    dot tmux/tmux.conf ~/.tmux.conf
     dot git/gitignore_global ~/.gitignore_global
     dot git/gitconfig ~/.gitconfig
     dot npm/npmrc ~/.npmrc
