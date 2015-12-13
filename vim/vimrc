@@ -16,9 +16,19 @@ Plug 'isRuslan/vim-es6'
 Plug 'flazz/vim-colorschemes'
 Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py' }
 Plug 'yosssi/vim-ace'
+Plug 'scrooloose/syntastic'
 call plug#end()
 
 :let mapleader = ","
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 "execute pathogen#infect()
 "syntax on
@@ -30,6 +40,7 @@ let g:lua_complete_omni = 0
 let g:lua_internal = 0
 
 set wildignore+=node_modules
+set wildignore+=bower_components
 let g:CommandTFileScanner = 'ruby'
 
 
