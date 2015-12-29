@@ -41,6 +41,7 @@ let g:lua_internal = 0
 
 set wildignore+=node_modules
 set wildignore+=bower_components
+set wildignore+=jspm_packages
 let g:CommandTFileScanner = 'ruby'
 
 
