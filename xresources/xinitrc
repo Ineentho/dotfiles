@@ -39,5 +39,6 @@ xmodmap -e "clear lock" #disable caps lock switch
 xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape 
 nm-applet&
 VBoxClient-all
+compton -b --vsync opengl&
 exec i3
 #exec openbox

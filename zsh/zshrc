@@ -27,15 +27,20 @@ alias idea='intellij-idea-ultimate-edition'
 alias tmux='TERM=screen-256color tmux'
 alias ara='android-run-all LIFQuiz.apk com.happybearstudios.lifquiz/com.ansca.corona.CoronaActivity'
 
-
-bindkey -v
-bindkey '^P' up-history
-bindkey '^N' down-history
-bindkey '^r' history-incremental-search-backward
+bindkey -e # emacs mode
+#bindkey -v
+#bindkey '^P' up-history
+#bindkey '^N' down-history
+#bindkey '^r' history-incremental-search-backward
 
 
 sd () {
     shutdown now $@
+}
+
+lifmon () {
+   cd ~/apk
+   nodemon -e apk -x "android-run-all LIFQuiz.apk com.happybearstudios.lifquiz/com.ansca.corona.CoronaActivity"
 }
 
 # ex - archive extractor

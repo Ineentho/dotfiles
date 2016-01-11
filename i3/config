@@ -157,3 +157,9 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+#exec --no-startup-id compton --vsync opengl
+#exec compton --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc 
+
+#new_window pixel
+
