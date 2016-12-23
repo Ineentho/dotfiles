@@ -1,0 +1,10 @@
+#!/usr/bin/expect -f
+
+spawn -noecho zsh
+expect "% "
+
+send "[lindex $argv 0]\n"
+
+interact
+
+exit

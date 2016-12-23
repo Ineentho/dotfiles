@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sleep .01
+xset dpms force off

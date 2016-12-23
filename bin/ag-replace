@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ag -l $1 | xargs sed -rie "s/$1/$2/g"
