@@ -30,7 +30,7 @@ font pango: Source Code Pro 12px
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec st
 
 # kill focused window
 bindsym $mod+Shift+c kill
@@ -153,7 +153,8 @@ bindsym $mod+Shift+q reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-msg exit"
 
 
 bindsym $mod+c exec "chromium || google-chrome-stable"
@@ -171,16 +172,17 @@ mode "resize" {
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Shift+h resize shrink width 100 px or 100 ppt
+        bindsym Shift+j resize grow height 100 px or 100 ppt
+        bindsym Shift+k resize shrink height 100 px or 100 ppt
+        bindsym Shift+l resize grow width 100 px or 100 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+bindsym $mod+p resize set 1366 768
 
 bindsym $mod+r mode "resize"
 
@@ -194,4 +196,3 @@ bar {
 #exec compton --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc 
 
 #new_window pixel
-

@@ -44,11 +44,17 @@ _precmd() {
 	print -Pn '\e]0;%~\a'
 }
 
+#export COLORTERM="gnome-terminal"
+#export TERM=xterm-256color
+
 autoload -Uz add-zsh-hook
 autoload -Uz vcs_info
 
 add-zsh-hook preexec _preexec
 add-zsh-hook precmd _precmd
+
+autoload -U select-word-style                 1
+select-word-style bash
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -58,3 +64,14 @@ eval "$POST_RC"
 
 export NVM_DIR="/home/henrik/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+autoload -U edit-command-line
+# Emacs style
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
+
+
+eval "$RUN"
